@@ -1,4 +1,4 @@
-# NREM-Final
+# NREM
 
 Official research code for **Nested Residual Evidence Modeling (NREM)**, a
 sample-level motor end-of-line anomaly detector for contaminated training.
