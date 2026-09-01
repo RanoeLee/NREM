@@ -1,0 +1,5 @@
+_base_: ../../release/NREM.yaml
+experiment:
+  name: REA_no_clipping
+nrem:
+  resa_cauchy_clip: 0.0

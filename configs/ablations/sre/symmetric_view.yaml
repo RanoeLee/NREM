@@ -1,0 +1,7 @@
+_base_: ../../release/NREM.yaml
+experiment:
+  name: SRE_symmetric_view
+nrem:
+  # Common equal-weight REA control used for the reported SRE/CTM mechanism table.
+  resa_stream_weights: [0.50, 0.50]
+  view_mode: symmetric

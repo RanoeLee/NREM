@@ -1,0 +1,62 @@
+schema_version: 1
+protocol_id: evaluation_split_40_60_seed2025_v1
+defaults:
+  ratios: ["00", "01", "05", "08", "12", "16", "20"]
+  seeds: [2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034]
+development:
+  mask_ratio:
+    variants: [NREM_mask030, NREM_mask040, NREM_mask050]
+    split: val
+    ratios: default
+    seeds: default
+  rea_weight:
+    variants: [weight_015, weight_020, weight_025]
+    split: val
+    ratios: default
+    seeds: default
+reporting:
+  main_chain:
+    variants: [Benchmark, SRE, CTM, NREM]
+    split: test
+    ratios: default
+    seeds: default
+  mechanism:
+    variants:
+      - masked_input
+      - symmetric_view
+      - no_covariance
+      - dyn_mask_005
+      - dyn_mask_030
+      - eval_groups_2
+      - eval_groups_8
+      - u1_only
+      - u2_only
+      - legacy_sum
+      - three_streams
+      - no_clipping
+      - equal_fusion
+    split: test
+    ratios: ["01", "08", "20"]
+    seeds: default
+  deterministic_external:
+    variants: [OCSVM, LOF]
+    split: test
+    ratios: default
+    seeds: [fixed]
+  stochastic_external:
+    variants:
+      - DAGMM
+      - DeepSVDD
+      - TCN-AE
+      - Transformer-AE
+      - USAD
+      - OmniAnomaly
+      - Anomaly-Transformer
+      - TranAD
+      - GDN
+      - MTGFlow
+      - NormFAAE
+      - CARLA
+    split: test
+    ratios: default
+    seeds: default

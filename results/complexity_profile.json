@@ -1,0 +1,68 @@
+[
+  {
+    "method": "NREM",
+    "config": "configs/release/NREM.yaml",
+    "input_shape": "1x6x48000",
+    "parameters": 13489088,
+    "trainable_parameters": 13489088,
+    "flops_per_sample": 8519417856,
+    "parameters_millions": 13.489088,
+    "flops_giga_per_sample": 8.519417856,
+    "flop_convention": "multiply_add=2; linear/conv from runtime tensor shapes; attention includes QK^T and AV; transformer pointwise overhead=16/output_element"
+  },
+  {
+    "method": "DeepSVDD",
+    "config": "configs/external/DeepSVDD_official.yaml",
+    "input_shape": "1x6x48000",
+    "parameters": 852608,
+    "trainable_parameters": 852608,
+    "flops_per_sample": 637272064,
+    "parameters_millions": 0.852608,
+    "flops_giga_per_sample": 0.637272064,
+    "flop_convention": "multiply_add=2; linear/conv from runtime tensor shapes; attention includes QK^T and AV; transformer pointwise overhead=16/output_element"
+  },
+  {
+    "method": "TCN-AE",
+    "config": "configs/external/TCN_AE_canonical.yaml",
+    "input_shape": "1x6x48000",
+    "parameters": 24486,
+    "trainable_parameters": 24486,
+    "flops_per_sample": 4663214080,
+    "parameters_millions": 0.024486,
+    "flops_giga_per_sample": 4.66321408,
+    "flop_convention": "multiply_add=2; linear/conv from runtime tensor shapes; attention includes QK^T and AV; transformer pointwise overhead=16/output_element"
+  },
+  {
+    "method": "Transformer-AE",
+    "config": "configs/external/Transformer_AE.yaml",
+    "input_shape": "1x6x48000",
+    "parameters": 166342,
+    "trainable_parameters": 166342,
+    "flops_per_sample": 68251811840,
+    "parameters_millions": 0.166342,
+    "flops_giga_per_sample": 68.25181184,
+    "flop_convention": "multiply_add=2; linear/conv from runtime tensor shapes; attention includes QK^T and AV; transformer pointwise overhead=16/output_element"
+  },
+  {
+    "method": "TranAD",
+    "config": "configs/external/TranAD_official.yaml",
+    "input_shape": "1x6x48000",
+    "parameters": 68108,
+    "trainable_parameters": 68108,
+    "flops_per_sample": 27341160448,
+    "parameters_millions": 0.068108,
+    "flops_giga_per_sample": 27.341160448,
+    "flop_convention": "multiply_add=2; linear/conv from runtime tensor shapes; attention includes QK^T and AV; transformer pointwise overhead=16/output_element"
+  },
+  {
+    "method": "Anomaly Transformer",
+    "config": "configs/external/AnomalyTransformer_official.yaml",
+    "input_shape": "1x6x48000",
+    "parameters": 15306,
+    "trainable_parameters": 15306,
+    "flops_per_sample": 3241869312,
+    "parameters_millions": 0.015306,
+    "flops_giga_per_sample": 3.241869312,
+    "flop_convention": "multiply_add=2; linear/conv from runtime tensor shapes; attention includes QK^T and AV; transformer pointwise overhead=16/output_element"
+  }
+]

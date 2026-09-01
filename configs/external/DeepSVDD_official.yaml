@@ -1,0 +1,42 @@
+experiment:
+  name: DeepSVDD_official
+method:
+  name: deepsvdd
+data:
+  channels: 6
+  max_len: 48000
+  exts: [.npy]
+  recursive: true
+  transpose_if_tall: true
+  strict_checks: true
+  npy_mmap_mode: null
+  normalize: zscore
+  robust_norm_seed: 2025
+  norm_max_samples: null
+model:
+  channels: 6
+nrem:
+  window_size: 256
+  stride: 128
+  backbone: mlp
+  latent_dim: 128
+  hidden_dim: 512
+  dropout: 0.0
+  score_mode: deepsvdd
+deepsvdd:
+  backbone: mlp
+  objective: one_class
+  center_init: train_mean
+  score_aggregation: mean
+  eps: 0.1
+train:
+  epochs: 30
+  batch_size: 8
+  num_workers: 4
+  lr: 0.0005
+  weight_decay: 0.000001
+  grad_clip: 5.0
+  use_ema: false
+runtime:
+  cudnn_benchmark: true
+  allow_tf32: true

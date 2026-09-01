@@ -1,0 +1,39 @@
+experiment:
+  name: Transformer_AE
+method:
+  name: transformer_ae
+data:
+  channels: 6
+  max_len: 48000
+  exts: [.npy]
+  recursive: true
+  transpose_if_tall: true
+  strict_checks: true
+  npy_mmap_mode: null
+  normalize: robust_mad
+  robust_norm_max_points_per_channel: 500000
+  robust_norm_seed: 2025
+  norm_max_samples: null
+model:
+  channels: 6
+nrem:
+  window_size: 1024
+  stride: 512
+  score_mode: transformer_ae
+baseline:
+  hidden_dim: 64
+  heads: 4
+  layers: 2
+  score_aggregation: mean
+train:
+  epochs: 30
+  batch_size: 4
+  num_workers: 4
+  lr: 0.0005
+  weight_decay: 0.00001
+  grad_clip: 5.0
+  use_ema: true
+  ema_decay: 0.995
+runtime:
+  cudnn_benchmark: true
+  allow_tf32: true

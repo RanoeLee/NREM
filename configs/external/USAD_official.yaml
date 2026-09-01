@@ -1,0 +1,38 @@
+experiment:
+  name: USAD_official
+method:
+  name: official_usad
+data:
+  channels: 6
+  max_len: 48000
+  exts: [.npy]
+  recursive: true
+  transpose_if_tall: true
+  strict_checks: true
+  npy_mmap_mode: null
+  normalize: minmax
+  robust_norm_max_points_per_channel: 500000
+  robust_norm_seed: 2025
+  norm_max_samples: null
+model:
+  channels: 6
+nrem:
+  window_size: 128
+  stride: 64
+  score_mode: official_usad
+baseline:
+  latent_dim: 64
+  score_alpha: 0.5
+  score_beta: 0.5
+  score_aggregation: mean
+train:
+  epochs: 30
+  batch_size: 8
+  num_workers: 4
+  lr: 0.001
+  weight_decay: 0.0
+  grad_clip: 0.0
+  use_ema: false
+runtime:
+  cudnn_benchmark: true
+  allow_tf32: true

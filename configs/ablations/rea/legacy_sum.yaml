@@ -1,0 +1,6 @@
+_base_: ../../release/NREM.yaml
+experiment:
+  name: REA_legacy_sum
+nrem:
+  resa_energy: u12
+  resa_stream_weights: [1.0]

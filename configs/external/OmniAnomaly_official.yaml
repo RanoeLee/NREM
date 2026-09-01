@@ -1,0 +1,37 @@
+experiment:
+  name: OmniAnomaly_official
+method:
+  name: omnianomaly_official
+data:
+  channels: 6
+  max_len: 48000
+  exts: [.npy]
+  recursive: true
+  transpose_if_tall: true
+  strict_checks: true
+  npy_mmap_mode: null
+  normalize: zscore
+  robust_norm_seed: 2025
+  norm_max_samples: null
+model:
+  channels: 6
+nrem:
+  window_size: 128
+  stride: 64
+  score_mode: omnianomaly_official
+baseline:
+  hidden_dim: 64
+  latent_dim: 32
+  kl_weight: 0.001
+  score_aggregation: mean
+train:
+  epochs: 30
+  batch_size: 8
+  num_workers: 4
+  lr: 0.001
+  weight_decay: 0.0
+  grad_clip: 5.0
+  use_ema: false
+runtime:
+  cudnn_benchmark: true
+  allow_tf32: true

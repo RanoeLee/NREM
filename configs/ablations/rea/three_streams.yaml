@@ -1,0 +1,6 @@
+_base_: ../../release/NREM.yaml
+experiment:
+  name: REA_three_streams
+nrem:
+  resa_energy: [u1, u2, rec]
+  resa_stream_weights: null

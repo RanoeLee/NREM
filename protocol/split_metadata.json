@@ -1,0 +1,15 @@
+{
+  "schema": "nrem-evaluation-split-v1",
+  "seed": 2025,
+  "val_ratio": 0.4,
+  "test_ratio": 0.6,
+  "counts": {
+    "val": {"ok": 200, "ng": 200},
+    "test": {"ok": 300, "ng": 300}
+  },
+  "total": 1000,
+  "manifest": "split_manifest.csv",
+  "manifest_sha256": "cc5a0066979718664efc04969dad9af764a6610a074c38a6eda0d354c7f06304",
+  "val_population_sha256": "77338fe0a19ee4201f698132c9cc39767f8f8e7aa4bc67cd3ee9baeefa893171",
+  "test_population_sha256": "835578521bcf50c94ae8aea0ae7efd093bda5bd83a9bba2e72f343efd0f24f54"
+}

@@ -1,0 +1,5 @@
+_base_: ../../release/NREM.yaml
+experiment:
+  name: REA_weight_025
+nrem:
+  resa_stream_weights: [0.25, 0.75]

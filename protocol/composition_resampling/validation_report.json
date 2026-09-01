@@ -1,0 +1,72 @@
+{
+  "composition_seeds": [
+    5202,
+    5203,
+    5204
+  ],
+  "hardlink_inode_checks": 36000,
+  "ratios": [
+    0.05,
+    0.08,
+    0.12
+  ],
+  "reporting_overlap_count": 0,
+  "set_count": 9,
+  "set_reports": {
+    "composition_seed_5202/contam_05": {
+      "membership_sha256": "f5671a87c5d1dfbd9476befd35a88df899d0b24a6adf376ac452284ad3eb3ac4",
+      "ng": 200,
+      "ok": 3800,
+      "total": 4000
+    },
+    "composition_seed_5202/contam_08": {
+      "membership_sha256": "672ba1e14b05a574cacb237d2de583e45b148db759dd048eaea82f731847aae4",
+      "ng": 320,
+      "ok": 3680,
+      "total": 4000
+    },
+    "composition_seed_5202/contam_12": {
+      "membership_sha256": "df307275abb35d4d7387ae71df64056bafdae0c377d242cfecee262a7bdda6d6",
+      "ng": 480,
+      "ok": 3520,
+      "total": 4000
+    },
+    "composition_seed_5203/contam_05": {
+      "membership_sha256": "5b60b8b8ff974de14fedbe3219a0026045ffb8b18729160dc7eee6d287efff4e",
+      "ng": 200,
+      "ok": 3800,
+      "total": 4000
+    },
+    "composition_seed_5203/contam_08": {
+      "membership_sha256": "ba7ad33cfb60f7c79e554c7d7bf629a8bbdb0509d3c89cc86e4ca098229b5b95",
+      "ng": 320,
+      "ok": 3680,
+      "total": 4000
+    },
+    "composition_seed_5203/contam_12": {
+      "membership_sha256": "f267fe4a56e590c52af5079df3aed6b93c120cdfdb843be09ff5831443c91385",
+      "ng": 480,
+      "ok": 3520,
+      "total": 4000
+    },
+    "composition_seed_5204/contam_05": {
+      "membership_sha256": "6de04c087f17581d11650c37fd5dac54363b1b8150477fa77e21089f8f62564b",
+      "ng": 200,
+      "ok": 3800,
+      "total": 4000
+    },
+    "composition_seed_5204/contam_08": {
+      "membership_sha256": "dc4a470d5744add73547c5a3032dcecde3a7916bf1bafc434c70206f938d8692",
+      "ng": 320,
+      "ok": 3680,
+      "total": 4000
+    },
+    "composition_seed_5204/contam_12": {
+      "membership_sha256": "c718726ab33d11ee977c2da625d7811aee7e460cec8501287d8a8157e58601d6",
+      "ng": 480,
+      "ok": 3520,
+      "total": 4000
+    }
+  },
+  "status": "valid"
+}

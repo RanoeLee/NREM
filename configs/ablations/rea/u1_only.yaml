@@ -1,0 +1,6 @@
+_base_: ../../release/NREM.yaml
+experiment:
+  name: REA_u1_only
+nrem:
+  resa_energy: u1
+  resa_stream_weights: [1.0]

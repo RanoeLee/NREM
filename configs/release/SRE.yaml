@@ -1,0 +1,64 @@
+# SRE: Sample Residual Evidence.
+experiment:
+  name: SRE
+method:
+  name: nrem
+data:
+  channels: 6
+  max_len: 48000
+  exts: [.npy]
+  recursive: true
+  transpose_if_tall: true
+  strict_checks: true
+  npy_mmap_mode: null
+  normalize: robust_mad
+  robust_norm_max_points_per_channel: 500000
+  robust_norm_seed: 2025
+  norm_max_samples: null
+model:
+  channels: 6
+nrem:
+  window_size: 1024
+  stride: 512
+  backbone: mlp
+  latent_dim: 256
+  hidden_dim: 1024
+  d_model: 128
+  residual_enc_hidden: [64, 128]
+  student_t_nu: 4.0
+  dropout: 0.0
+  var_gamma: 0.2
+  var_eps: 0.0001
+  use_covariance: true
+  predictor_hidden_dim: 256
+  mask_ratio: 0.30
+  view_mode: byol
+  dyn_mask_ratio: 0.15
+  dynamics_hidden: 256
+  dynamics_layers: 4
+  eval_dyn_groups: 4
+  reconstruction_mode: decoupled
+  rec_loss: student_t
+  use_view: true
+  use_dynamics: false
+  score_mode: u1_mean
+  resa_energy: u1
+  resa_cauchy_clip: 0.0
+  loss_weights:
+    rec: 1.0
+    view: 0.1
+    dyn: 0.0
+    var: 0.05
+    cov: 1.0
+train:
+  epochs: 30
+  batch_size: 4
+  num_workers: 4
+  lr: 0.0005
+  weight_decay: 0.00001
+  grad_clip: 5.0
+  use_ema: true
+  ema_decay: 0.995
+runtime:
+  cudnn_benchmark: true
+  allow_tf32: true

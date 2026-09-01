@@ -88,3 +88,4 @@ Thumbs.db
 /tests/test_composition_robustness_sbatch.py
 /tests/test_submit_composition_robustness.py
 /configs/external/*retry*.yaml
+/scripts/slurm/run_composition_robustness_task.sbatch
