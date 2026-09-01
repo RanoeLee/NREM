@@ -1,0 +1,90 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.venv/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Training results and logs
+/runs/
+/logs/
+/wandb/
+/outputs/
+/output/
+/checkpoints/
+/EXP_RESULTS/
+/data/
+/datasets/
+/private/
+/experiments/
+!/experiments/
+/experiments/*
+!/experiments/paper_400_600_scope.yaml
+/figures/
+/AGENTS.md
+/tmp/
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+.codex_*
+debug.log
+.DS_Store
+Thumbs.db
+
+# Manuscript materials are confidential local working files. The public code
+# release contains machine-readable result summaries, not the paper source.
+/paper/
+/pull_paper_from_gitee.cmd
+/scripts/sync_paper_from_gitee.ps1
+
+# Local research ledgers remain available in the working copy but are not part
+# of the public GitHub surface. Only the finished public documentation is kept.
+/docs/*
+!/docs/README.md
+!/docs/DATA.md
+!/docs/REPRODUCIBILITY.md
+!/docs/RESULTS.md
+!/docs/COMPLEXITY.md
+
+# Curated, path-free paper tables only.
+/results/*
+!/results/paper_400_600_run_level.csv
+!/results/paper_400_600_summary.csv
+!/results/complexity_profile.csv
+!/results/complexity_profile.json
+!/results/aggregate_efficiency.csv
+
+# Internal-only post-hoc analysis and batch orchestration helpers. These files
+# reference private servers, transient experiment revisions, or scheduler
+# workflows and are not needed to verify the published EXP_RESULTS bundle.
+/tools/analyze_low_fpr_metrics.py
+/tools/analyze_composition_robustness.py
+/tools/build_composition_robustness_manifest.py
+/tools/build_composition_robustness_sets.py
+/tools/submit_composition_robustness.py
+/tests/test_analyze_low_fpr_metrics.py
+/tests/test_analyze_composition_robustness.py
+/tests/test_build_composition_robustness_manifest.py
+/tests/test_build_composition_robustness_sets.py
+/tests/test_composition_robustness_sbatch.py
+/tests/test_submit_composition_robustness.py
+/configs/external/*retry*.yaml

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use NREM, please cite the accompanying paper."
+title: "NREM: Nested Residual Evidence Modeling for Sample-Level Motor End-of-Line Anomaly Detection under Contaminated Training"
+type: software
+version: 0.1.0
+date-released: 2026-07-28
+authors:
+  - family-names: Li
+    given-names: Zikai
+  - family-names: Xu
+    given-names: Jianfeng
+  - family-names: Bai
+    given-names: Long
