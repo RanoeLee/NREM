@@ -1,8 +1,23 @@
 # IPML-MotorEOL data and fixed 400/600 split
 
-NREM expects one two-dimensional NumPy array per motor product in either
-`[channels, time]` or `[time, channels]` layout. Download the separate
-`IPML-MotorEOL` asset and place it as:
+## Download
+
+**IPML-MotorEOL: A Product-Level Vibro-Acoustic Dataset for Motor End-of-Line
+Quality Inspection** is distributed as `IPML-MotorEOL.zip`:
+
+- **Baidu Netdisk / 百度网盘:** [Download IPML-MotorEOL.zip](https://pan.baidu.com/s/1zyJVdGbBN1FD6UIPlrq5pQ?pwd=EAAI)
+- **Extraction code / 提取码:** `EAAI`
+
+## Signal format and directory layout
+
+Each `.npy` file stores one complete motor product as a `(6, 48000)` array
+in channel-by-time order with dtype `float32`. The two-second signal is sampled
+at 24 kHz and contains three acoustic channels and three acceleration channels.
+OK and NG labels describe overall product quality, not defect type or location.
+
+Extract the archive so that the following structure is under the repository's
+`data/` directory. If the ZIP already contains an `IPML-MotorEOL/` folder,
+extract it into `data/` to avoid nesting that folder twice.
 
 ```text
 data/IPML-MotorEOL/
@@ -14,11 +29,37 @@ data/IPML-MotorEOL/
 |   |-- contam_12/
 |   |-- contam_16/
 |   `-- contam_20/
-|-- val/ok, val/ng         # 200 OK + 200 NG
-|-- test/ok, test/ng       # 300 OK + 300 NG
-|-- split_manifest.csv
-`-- split_metadata.json
+|-- val/
+|   |-- ok/               # 200 OK
+|   `-- ng/               # 200 NG
+|-- test/
+|   |-- ok/               # 300 OK
+|   `-- ng/               # 300 NG
+`-- README.md
 ```
+
+The release contains 29,000 `.npy` files, totaling 33,411,712,000 bytes
+(31.12 GiB) of uncompressed signal data. These represent 5,800 unique motors;
+the training conditions reuse products from a common pool of 4,000 OK and
+800 NG motors and should not be combined into one training set.
+
+| Training folder | NG contamination | OK | NG | Total |
+| --- | ---: | ---: | ---: | ---: |
+| `contam_00` | 0% | 4,000 | 0 | 4,000 |
+| `contam_01` | 1% | 3,960 | 40 | 4,000 |
+| `contam_05` | 5% | 3,800 | 200 | 4,000 |
+| `contam_08` | 8% | 3,680 | 320 | 4,000 |
+| `contam_12` | 12% | 3,520 | 480 | 4,000 |
+| `contam_16` | 16% | 3,360 | 640 | 4,000 |
+| `contam_20` | 20% | 3,200 | 800 | 4,000 |
+
+## Fixed evaluation protocol
+
+The archive contains only the three data folders and its README. Use the
+versioned [`protocol/split_manifest.csv`](../protocol/split_manifest.csv) and
+[`protocol/split_metadata.json`](../protocol/split_metadata.json) from this
+code repository; these files do not need to be copied into the dataset folder.
+For the evaluation command, see [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
 
 Training never uses OK/NG labels. The 400-product validation split is used only
 to freeze SRE mask ratio 0.30 and SRE/CTM weight 0.20/0.80. All paper-facing

@@ -40,6 +40,11 @@ Each leaf contains `checkpoint.pt`, `config.yaml`, `metrics.json`, `scores.npz`,
 
 ## Retrain from scratch
 
+Download `IPML-MotorEOL.zip` from the [dataset download page](DATA.md#download)
+and extract it to `data/IPML-MotorEOL/`, preserving the supplied train/val/test
+folders. Use the split manifest and metadata in this repository's `protocol/`
+directory.
+
 Install the project and run its tests:
 
 ```bash
@@ -67,7 +72,7 @@ Evaluate against the fixed reporting split:
 ```bash
 python evaluate.py \
   --root runs/reproduce-nrem/seed_2025/NREM/contam_20 \
-  --eval_root data/IPML-MotorEOL/evaluation_split_40_60_seed2025_v1/test \
+  --eval_root data/IPML-MotorEOL/test \
   --split_manifest protocol/split_manifest.csv \
   --split_name test --expected_ok 300 --expected_ng 300 --device cuda
 ```

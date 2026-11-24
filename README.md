@@ -32,10 +32,22 @@ pytest -q
 
 ## Data and verification
 
-The 32 GB data archive is distributed separately. Put it under
-`data/IPML-MotorEOL/` and follow [docs/DATA.md](docs/DATA.md). After downloading the separate results asset, place its `EXP_RESULTS` directory
-at the repository root. The command below verifies every original core artifact
-and independently recomputes all 1,944 core AUROC/AUPRC pairs:
+Download **IPML-MotorEOL: A Product-Level Vibro-Acoustic Dataset for Motor
+End-of-Line Quality Inspection** as `IPML-MotorEOL.zip`:
+
+- **Baidu Netdisk / 百度网盘:** [Download the dataset](https://pan.baidu.com/s/1zyJVdGbBN1FD6UIPlrq5pQ?pwd=EAAI)
+- **Extraction code / 提取码:** `EAAI`
+
+Extract the archive so that `train/`, `val/`, `test/`, and the dataset
+`README.md` are under `data/IPML-MotorEOL/`. It contains 29,000 NumPy files
+(31.12 GiB of uncompressed signal data), with seven training conditions,
+400 validation products, and 600 test products. See [docs/DATA.md](docs/DATA.md)
+for the signal format, class counts, and fixed-split instructions.
+
+The dataset archive contains the signal data. To verify saved experiment
+results, obtain the separate results asset and place its `EXP_RESULTS`
+directory at the repository root. The following command verifies every original
+core artifact and independently recomputes all 1,944 core AUROC/AUPRC pairs:
 
 ```bash
 python -m tools.verify_final_release EXP_RESULTS
